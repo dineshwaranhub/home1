@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DinesH Catering Management System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .slides {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            animation: slide-animation 12s infinite;
+        }
+
+        .hero .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide-animation {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            100% { transform: translateX(0); }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            animation: blink-animation 2s infinite;
+        }
+
+        .btn:hover {
+            background-color: #ffb007;
+        }
+
+        @keyframes blink-animation {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem 1rem;
+        }
+
+        .section {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .about-contact {
+            padding: 2rem 1rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .about-contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-contact p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials {
+            background-color: #f0f0f0;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials p {
+            font-size: 1rem;
+            color: #555;
+            font-style: italic;
+            margin: 0.5rem 0;
+        }
+
+        .faq {
+            padding: 2rem 1rem;
+            background-color: #fff;
+        }
+
+        .faq h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .menu-bar {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            background-color: #333;
+            border-radius: 5px;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+
+        .menu-bar div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Logo styles */
+        .logo {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo on the left corner -->
+    <div class="logo">
+        <img src="LOGO.png" alt="DinesH Catering Logo">
+    </div>
+
+    <div class="menu-bar">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="hero">
+        <div class="slides">
+            <img src="slydeno1.jpg" alt="Slide 1">
+            <img src="slydeno2.jpg" alt="Slide 2">
+            <img src="slydeno3.jpg" alt="Slide 3">
+            <img src="slydeno4.jpg" alt="Slide 4">
+        </div>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>DinesH Catering Management System</h1>
+            <p>Experience the finest catering for your events.</p>
+            <a href="#book" class="btn">Book Now</a>
+            <a href="#worker-registration" class="btn" style="margin-left: 1rem;">Worker Registration</a>
+        </div>
+    </div>
+
+    <div class="sections">
+        <div class="section">
+            <h2>Places</h2>
+            <p>We cater to a variety of venues and locations.</p>
+        </div>
+        <div class="section">
+            <h2>Functions</h2>
+            <p>From weddings to corporate events, we've got you covered.</p>
+        </div>
+        <div class="section">
+            <h2>Foods</h2>
+            <p>Delicious and diverse menus to suit all tastes.</p>
+        </div>
+    </div>
+
+    <div class="about-contact">
+        <h2>About Us</h2>
+        <p>DinesH Catering Management System provides premium catering services to make your events memorable. With years of experience, we ensure quality and satisfaction.</p>
+        <h2>Contact Us</h2>
+        <p>Email: contact@dineshcatering.com</p>
+        <p>Phone: +123-456-7890</p>
+        <p>Address: 123 Catering Lane, Foodville, USA</p>
+    </div>
+
+    <div class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <p>"The best catering service we've ever had! Highly recommended." - John D.</p>
+        <p>"Professional, timely, and delicious! Thank you for making our event special." - Sarah L.</p>
+    </div>
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What types of events do you cater?</h3>
+            <p>We cater weddings, corporate events, private parties, and more.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do you provide custom menus?</h3>
+            <p>Yes, we can tailor our menu to meet your specific needs and preferences.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How far in advance should I book?</h3>
+            <p>We recommend booking at least 2-3 weeks in advance to secure your date.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 DinesH Catering Management System. All rights reserved.</p>
+        <p>Follow us: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+    </footer>
+</body>
+</html>
